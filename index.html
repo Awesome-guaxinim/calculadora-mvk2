@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    background-image: linear-gradient(45deg, rgb(0, 0, 0), rgba(255, 98, 0, 0.809));
+    height: 68vh;
+}
+
+header{
+    background-color: rgb(255, 98, 0);
+    width: 260px; 
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    padding: 10px;
+    border-radius: 5px;  /*Arredondamento de borda*/
+}
+
+/*.display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+*/
+
+div#display{
+    background-color: white;
+    width: 252px;
+    height: 50px;
+    margin-bottom: 2px;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+.botão{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(33, 32, 32);
+    color: white;
+    font-size: 20px;
+    margin: 2px 0px 2px 0px;
+    /*border: none; botão sem borda nos lados */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.botão:hover{
+    background-color: black;
+}
+
+.igual{
+    width: 124px;
+    height: 60px;
+    background-color: rgb(33, 32, 32);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.igual:hover{
+    background-color: black;
+}
+
+footer{
+    color: white;
+    text-align: center;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header> 
+        <div id="display"></div>
+        <div>
+            <input type="button" value="AC" class="botão" onclick="limpar()">
+            <input type="button" value="<" class="botão" onclick="regredir()">
+            <input type="button" value="%" class="botão" onclick="insert('%')">
+            <input type="button" value="/" class="botão" onclick="insert('/')">
+        </div>
+        <div>
+            <input type="button" value="7" class="botão" onclick="insert('7')">
+            <input type="button" value="8" class="botão" onclick="insert('8')">
+            <input type="button" value="9" class="botão" onclick="insert('9')">
+            <input type="button" value="X" class="botão" onclick="insert('*')">
+        </div>
+        <div>
+            <input type="button" value="4" class="botão" onclick="insert('4')">
+            <input type="button" value="5" class="botão" onclick="insert('5')">
+            <input type="button" value="6" class="botão" onclick="insert('6')">
+            <input type="button" value="-" class="botão" onclick="insert('-')">
+        </div>
+        <div>
+            <input type="button" value="1" class="botão" onclick="insert('1')">
+            <input type="button" value="2" class="botão" onclick="insert('2')">
+            <input type="button" value="3" class="botão" onclick="insert('3')">
+            <input type="button" value="+" class="botão" onclick="insert('+')">
+        </div>
+        <div>
+            <input type="button" value="0" class="botão" onclick="insert('0')">
+            <input type="button" value="," class="botão" onclick="insert('.')">
+            <input type="button" value="=" class="igual" onclick="calculadora()">
+        </div>
+    </header>
+    <footer>© BY C.O.K.A.O</footer>
+    <script>
+        function insert(num){
+    let numero = document.getElementById('display').innerHTML;
+    display.innerHTML += num;
+    
+}
+
+function limpar(){
+    document.getElementById('display').innerHTML = ''
+}
+
+function regredir(){
+    let display = document.getElementById('display').innerHTML;
+    document.getElementById('display').innerHTML = display.substring(0, display.length -1)
+}
+
+function calculadora(){
+    let display = document.getElementById('display').innerHTML;
+    if(display){
+        document.getElementById('display').innerHTML = eval(display);
+    } else {
+        window.alert('Sem numéros..')
+    }
+}
+    </script>
+</body>
+</html>
